@@ -37,14 +37,18 @@ public class TCellBehavior : MonoBehaviour
             if (collider.gameObject.GetComponent<CellBehavior>().isInfected) // some kind of bool check here
             {
                 // destroy cell
-                // collider.gameObject.CellDestroy()  // add this when method is written
                 Destroy(collider.gameObject);
 
                 // destroy tcell
-                animator.Play("Death");
-                Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length+0.5f);
+                Die();
             }
         }
+    }
+
+    void Die()
+    {
+        animator.Play("Death");
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length+0.5f);
     }
 
 }
