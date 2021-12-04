@@ -2,15 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MacrophageBehavior : MonoBehaviour
+public class MacrophageBehavior : ImmuneBehavior
 {
     public bool readAntigen;
     public Rigidbody2D rb;
+    private float speed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        readAntigen = true;
+        readAntigen = false;
+        speed = 1.5f;
+    }
+
+    void Update()
+    {
+        if(readAntigen)
+        {
+            GameObject[] bCellObjects = GameObject.FindGameObjectsWithTag("BCell");
+            if(bCellObjects.Length > 0)
+            {
+                Vector3 bCellPosition = bCellObjects[0].transform.position;
+                UpdatePosition(bCellPosition, speed);
+            }
+        }
+        else
+        {
+            GameObject[] virusObjects = GameObject.FindGameObjectsWithTag("Virus");
+            if(virusObjects.Length > 0)
+            {
+                Vector3 virusPosition = virusObjects[0].transform.position;
+                UpdatePosition(virusPosition, speed);
+            }
+        }
     }
 
     void OnCollisionEnter2D (Collision2D collision)
@@ -19,21 +43,13 @@ public class MacrophageBehavior : MonoBehaviour
         {
             readAntigen = true;
         }
-
+        
         if(collision.gameObject.name == "BCell")
         {
             if(readAntigen)
             {
-                Debug.Log("Macrophage on BCell");
                 rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                StartCoroutine(DelayRestartMacrophage());
             }
         }
-    }
-
-    private IEnumerator DelayRestartMacrophage()
-    {
-        yield return new WaitForSeconds(5f);
-        rb.constraints = RigidbodyConstraints2D.None;
     }
 }

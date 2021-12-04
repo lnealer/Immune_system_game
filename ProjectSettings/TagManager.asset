@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Virus
   - Cell
+  - BCell
   layers:
   - Default
   - TransparentFX

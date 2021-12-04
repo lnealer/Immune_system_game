@@ -6,6 +6,7 @@ public class BCellBehavior : MonoBehaviour
 {
     
     public GameObject antibodyBar;
+    public GameObject antibody;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class BCellBehavior : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if(collision.gameObject.name == "Macrophage")
+        if(collision.gameObject.name == "Macrophage" && collision.gameObject.GetComponent<MacrophageBehavior>().readAntigen)
         {
             antibodyBar.SetActive(true);
             StartCoroutine(DelayDestroyBCell());
@@ -25,6 +26,8 @@ public class BCellBehavior : MonoBehaviour
     private IEnumerator DelayDestroyBCell()
     {
         yield return new WaitForSeconds(5f);
+        Vector3 pos = transform.position;
         Destroy(gameObject);
+        Instantiate(antibody, pos, Quaternion.identity);
     }
 }

@@ -9,10 +9,14 @@ public class VirusBehavior : MonoBehaviour
     private float timeLeft;
     public Rigidbody2D rb;
     private Vector2 movement;
+    private bool antibodyCollision;
+    private float antibodyClock;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        antibodyCollision = false;
+        antibodyClock = 5.0f;
     }
  
     void Update () 
@@ -22,6 +26,11 @@ public class VirusBehavior : MonoBehaviour
             movement = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f));
             timeLeft += accelerationTime;
         }
+
+        if(antibodyCollision)
+        {
+            antibodyClock -= Time.deltaTime;
+        } 
     }
 
     void FixedUpdate()
@@ -40,6 +49,28 @@ public class VirusBehavior : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 StartCoroutine(DelayRestartVirus());
             }
+        }
+
+        if(collision.gameObject.tag == "Antibody")
+        {
+            antibodyCollision = true;
+        }
+    }
+
+    void OnCollisionExit2D (Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Antibody")
+        {
+            antibodyCollision = false;
+        }
+    } 
+
+    void OnCollisionStay2D (Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Antibody" && antibodyClock < 0)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 
