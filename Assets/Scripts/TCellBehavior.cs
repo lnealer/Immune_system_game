@@ -34,7 +34,7 @@ public class TCellBehavior : MonoBehaviour
         // when the tcell collides with an infected cell, both are destroyed
         if (collider.gameObject.tag == "Cell")
         {
-            if (collider.gameObject.GetComponent<CellBehavior>().isInfected) // some kind of bool check here
+            if (collider.gameObject.GetComponent<NeutralCellBehavior>().isInfected) // some kind of bool check here
             {
                 // destroy cell
                 Destroy(collider.gameObject);
