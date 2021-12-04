@@ -38,10 +38,14 @@
   <ItemGroup>
      <Compile Include="Assets/ImportedArt/CuteSlime(Macrophage)/Mobs.cs" />
      <Compile Include="Assets/ImportedArt/CuteSlime(Macrophage)/StateRandom.cs" />
-     <Compile Include="Assets/Scripts/KeyMovement.cs" />
-     <Compile Include="Assets/Scripts/TCellBehavior.cs" />
      <Compile Include="Assets/Scripts/VirusBehavior.cs" />
+     <Compile Include="Assets/Scripts/KeyMovement.cs" />
      <Compile Include="Assets/Scripts/NeutralCellBehavior.cs" />
+     <Compile Include="Assets/Scripts/TCellBehavior.cs" />
+     <Compile Include="Assets/Scripts/BCellBehavior.cs" />
+     <Compile Include="Assets/Scripts/AntibodyBarBehavior.cs" />
+     <Compile Include="Assets/Scripts/MacrophageBehavior.cs" />
+     <Compile Include="Assets/Scripts/ScreenEdgeColliders.cs" />
      <None Include="Assets/ImportedArt/CuteSlime(Macrophage)/ReadMe.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.3.19f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

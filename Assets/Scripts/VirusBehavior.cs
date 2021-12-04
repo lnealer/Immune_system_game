@@ -4,37 +4,29 @@ using UnityEngine;
 
 public class VirusBehavior : MonoBehaviour
 {
-    float maxX = 5.7f;
-    float minX = -5.7f;
-    float maxY = 3.8f;
-    float minY = -3.8f;
-    private float tChange = 0f;
-    private float randomX;
-    private float randomY;
-    private float moveSpeed = 3f;
+    private float accelerationTime = 2f;
+    private float maxSpeed = 3f;
+    private float timeLeft;
     public Rigidbody2D rb;
+    private Vector2 movement;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
  
-    void Update () {
-        if (Time.time >= tChange){
-            randomX = Random.Range(-1.0f,1.0f);
-            randomY = Random.Range(-1.0f,1.0f);
-            tChange = Time.time + Random.Range(0.5f,1.5f);
+    void Update () 
+    {
+        timeLeft -= Time.deltaTime;
+        if (Time.time >= timeLeft){
+            movement = new Vector2(Random.Range(-1f,1f), Random.Range(-1f,1f));
+            timeLeft += accelerationTime;
         }
+    }
 
-        transform.Translate(new Vector2(randomX, randomY) * moveSpeed * Time.deltaTime);
-
-        if (transform.position.x >= maxX || transform.position.x <= minX) {
-            randomX = -randomX;
-        }
-        if (transform.position.y >= maxY || transform.position.y <= minY) {
-            randomY = -randomY;
-        }
+    void FixedUpdate()
+    {
+        rb.AddForce(movement * maxSpeed);
     }
 
     void OnCollisionEnter2D (Collision2D collision)
@@ -43,19 +35,17 @@ public class VirusBehavior : MonoBehaviour
         {
             if(!(collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected))
             {
-                Debug.Log("Hit healthy cell");
+                Debug.Log("Virus hit healthy cell");
                 collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected = true;
-                StartCoroutine(DelayVirus());
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                StartCoroutine(DelayRestartVirus());
             }
         }
     }
 
-    private IEnumerator DelayVirus()
+    private IEnumerator DelayRestartVirus()
     {
-        Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(10);
-        Debug.Log("Healthy cell destroyed!");
-        Time.timeScale = 1f;
+        yield return new WaitForSeconds(10f);
+        rb.constraints = RigidbodyConstraints2D.None;
     }
-
 }

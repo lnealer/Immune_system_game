@@ -6,16 +6,9 @@ public class NeutralCellBehavior : MonoBehaviour
 {
     public bool isInfected;
 
-    // Start is called before the first frame update
     void Start()
     {
         isInfected = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnCollisionEnter2D (Collision2D collision)
@@ -23,10 +16,10 @@ public class NeutralCellBehavior : MonoBehaviour
         if(collision.gameObject.name == "Virus")
         {
             Debug.Log("Hit by virus");
-            StartCoroutine(Flash());
             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            StartCoroutine(Flash());
+            StartCoroutine(DelayDestroyCell());
         }
-        
     }
 
     private IEnumerator Flash()
@@ -34,10 +27,16 @@ public class NeutralCellBehavior : MonoBehaviour
         for(var n = 0; n < 10; n++)
         {
             gameObject.GetComponent<Renderer>().enabled = true;
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSeconds(0.5f);
             gameObject.GetComponent<Renderer>().enabled = false;
-            yield return new WaitForSecondsRealtime(0.5f);
+            yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    private IEnumerator DelayDestroyCell()
+    {
+        yield return new WaitForSeconds(10f);
+        Debug.Log("Cell destroyed by virus!");
         Destroy(gameObject);
     }
 }
