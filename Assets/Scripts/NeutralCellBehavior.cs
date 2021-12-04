@@ -31,12 +31,13 @@ public class NeutralCellBehavior : MonoBehaviour
 
     private IEnumerator Flash()
     {
-        for(var n = 0; n < 8; n++)
+        for(var n = 0; n < 10; n++)
         {
             gameObject.GetComponent<Renderer>().enabled = true;
             yield return new WaitForSecondsRealtime(0.5f);
             gameObject.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSecondsRealtime(0.5f);
         }
+        Destroy(gameObject);
     }
 }

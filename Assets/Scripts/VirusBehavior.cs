@@ -45,16 +45,15 @@ public class VirusBehavior : MonoBehaviour
             {
                 Debug.Log("Hit healthy cell");
                 collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected = true;
-                StartCoroutine(DelayVirus(collision));
+                StartCoroutine(DelayVirus());
             }
         }
     }
 
-    private IEnumerator DelayVirus(Collision2D collision)
+    private IEnumerator DelayVirus()
     {
         Time.timeScale = 0f;
-        yield return new WaitForSecondsRealtime(8);
-        Destroy(collision.transform.gameObject);
+        yield return new WaitForSecondsRealtime(10);
         Debug.Log("Healthy cell destroyed!");
         Time.timeScale = 1f;
     }
