@@ -5,6 +5,7 @@ using UnityEngine;
 public class NeutralCellBehavior : MonoBehaviour
 {
     public bool isInfected;
+    public GameObject virus;
 
     void Start()
     {
@@ -38,5 +39,6 @@ public class NeutralCellBehavior : MonoBehaviour
         yield return new WaitForSeconds(10f);
         Debug.Log("Cell destroyed by virus!");
         Destroy(gameObject);
+        Instantiate(virus);
     }
 }
