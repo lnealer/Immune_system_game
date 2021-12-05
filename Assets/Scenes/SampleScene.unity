@@ -764,7 +764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2589149876608404173, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2589149876608404174, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
       propertyPath: m_RootOrder
@@ -1290,6 +1290,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Macrophage
       objectReference: {fileID: 0}
+    - target: {fileID: 7365759063726183693, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
+      propertyPath: m_Size.x
+      value: 0.12509526
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365759063726183693, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.017452374
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365759063726183693, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0070255534
+      objectReference: {fileID: 0}
     - target: {fileID: 7365759063726183695, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1354,6 +1366,22 @@ PrefabInstance:
     - target: {fileID: 8209511818046274096, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: m_Name
       value: Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274106, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.17648315
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274106, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.02500296
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: antibodyClock
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: replicationDamage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: m_RootOrder

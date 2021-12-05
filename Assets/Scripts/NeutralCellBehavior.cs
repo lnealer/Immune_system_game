@@ -6,6 +6,7 @@ public class NeutralCellBehavior : MonoBehaviour
 {
     public bool isInfected;
     public GameObject virus;
+    private float virusReplicationDamage;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class NeutralCellBehavior : MonoBehaviour
         {
             Debug.Log("Hit by virus");
             gameObject.GetComponent<Renderer>().material.color = Color.red;
+            virusReplicationDamage = collision.gameObject.GetComponent<VirusBehavior>().replicationDamage;
             StartCoroutine(Flash());
             StartCoroutine(DelayDestroyCell());
         }
@@ -39,6 +41,7 @@ public class NeutralCellBehavior : MonoBehaviour
         yield return new WaitForSeconds(10f);
         Debug.Log("Cell destroyed by virus!");
         Instantiate(virus, transform.position, Quaternion.identity);
+        GameObject.Find("GameManager").GetComponent<GameManagerScript>().LoseHealth(virusReplicationDamage);
         Destroy(gameObject);
     }
 }

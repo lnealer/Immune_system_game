@@ -10,13 +10,13 @@ public class VirusBehavior : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
     private bool antibodyCollision;
-    private float antibodyClock;
+    public float antibodyClock;
+    public float replicationDamage; // damage done by replication
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         antibodyCollision = false;
-        antibodyClock = 5.0f;
     }
  
     void Update () 
