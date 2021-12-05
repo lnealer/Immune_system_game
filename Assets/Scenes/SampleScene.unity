@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TCell
       objectReference: {fileID: 0}
+    - target: {fileID: 2589149876608404173, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2589149876608404174, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
       propertyPath: m_RootOrder
       value: 3

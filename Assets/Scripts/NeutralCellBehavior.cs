@@ -38,7 +38,7 @@ public class NeutralCellBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         Debug.Log("Cell destroyed by virus!");
+        Instantiate(virus, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        Instantiate(virus);
     }
 }
