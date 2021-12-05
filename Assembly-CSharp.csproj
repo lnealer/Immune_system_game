@@ -51,6 +51,7 @@
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\StateRandom.cs" />
      <Compile Include="Assets\Scripts\MacrophageBehavior.cs" />
      <Compile Include="Assets\Scripts\BCellBehavior.cs" />
+     <Compile Include="Assets\Scripts\SensorScript.cs" />
      <Compile Include="Assets\Scripts\ImmuneBehavior.cs" />
      <Compile Include="Assets\Scripts\VirusBehavior.cs" />
      <Compile Include="Assets\Scripts\ScreenEdgeColliders.cs" />
