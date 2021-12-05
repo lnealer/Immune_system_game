@@ -65,4 +65,44 @@ public class CellDeployer : MonoBehaviour
             }
         }
     }
+
+    public int GetCountByName(string cell)
+    {
+        if (cell == "Macrophage")
+        {
+            return macrophageCount;
+        }
+        if (cell == "BCell")
+        {
+            return bCellCount;
+        }
+        if (cell == "TCell")
+        {
+            return tCellCount;
+        }
+        else 
+        {
+            return 0;
+        }
+    }
+
+        public int GetMaxByName(string cell)
+    {
+        if (cell == "Macrophage")
+        {
+            return macrophageMax;
+        }
+        if (cell == "BCell")
+        {
+            return bCellMax;
+        }
+        if (cell == "TCell")
+        {
+            return tCellMax;
+        }
+        else 
+        {
+            return 0;
+        }
+    }
 }

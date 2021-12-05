@@ -49,6 +49,7 @@
   <ItemGroup>
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\Mobs.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
+     <Compile Include="Assets\Scripts\CountScript.cs" />
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\StateRandom.cs" />
      <Compile Include="Assets\Scripts\MacrophageBehavior.cs" />
      <Compile Include="Assets\Scripts\BCellBehavior.cs" />
