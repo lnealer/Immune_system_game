@@ -5,9 +5,6 @@ using UnityEngine;
 public class GameManagerScript : MonoBehaviour
 {
     public float health;
-    public int tCellCount;
-    public int macrophageCount;
-    public int bCellCount;
 
     void Start()
     {

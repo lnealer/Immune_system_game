@@ -10,16 +10,19 @@ public class TCellBehavior : MonoBehaviour
     private Animator animator;
     public float speed;
     private float scale;
-    public bool targetAcquired = false;
+    private bool targetAcquired = false;
     private NeutralCellBehavior[] cells;
-    public Transform infectedTarget; // cell tcell will travel to
+    private Transform infectedTarget; // cell tcell will travel to
     private bool destroyed;
+
+    private Rigidbody2D rb;
 
 
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
@@ -32,6 +35,7 @@ public class TCellBehavior : MonoBehaviour
 
     void Update()
     {
+        Animate();
         if (targetAcquired)
         {
             MoveToTarget();
@@ -40,6 +44,12 @@ public class TCellBehavior : MonoBehaviour
         {
             CheckCells();
         }
+    }
+
+    void Animate()
+    {
+        // animator.SetBool("Walk",  (Mathf.Abs(rb.velocity.x) > 0 || 
+        //                             Mathf.Abs(rb.velocity.y) > 0));
     }
 
     void CheckCells()
@@ -87,7 +97,8 @@ public class TCellBehavior : MonoBehaviour
 
         // move towards goal
         transform.position = Vector2.MoveTowards(transform.position, infectedTarget.position, speed*Time.deltaTime);
-  
+        animator.SetBool("Walk", true);
+
     }
 
         void FlipCharacter()

@@ -48,15 +48,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\Mobs.cs" />
+     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\StateRandom.cs" />
      <Compile Include="Assets\Scripts\MacrophageBehavior.cs" />
      <Compile Include="Assets\Scripts\BCellBehavior.cs" />
-     <Compile Include="Assets\Scripts\SensorScript.cs" />
+     <Compile Include="Assets\Scripts\HealthBarScript.cs" />
      <Compile Include="Assets\Scripts\ImmuneBehavior.cs" />
      <Compile Include="Assets\Scripts\VirusBehavior.cs" />
      <Compile Include="Assets\Scripts\ScreenEdgeColliders.cs" />
      <Compile Include="Assets\Scripts\KeyMovement.cs" />
      <Compile Include="Assets\Scripts\AntibodyBarBehavior.cs" />
+     <Compile Include="Assets\Scripts\CellDeployer.cs" />
      <Compile Include="Assets\Scripts\NeutralCellBehavior.cs" />
      <Compile Include="Assets\Scripts\AntibodyBehavior.cs" />
      <Compile Include="Assets\Scripts\TCellBehavior.cs" />
