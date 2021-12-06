@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -36,5 +37,19 @@ public class GameManagerScript : MonoBehaviour
         }
         // increase health
         health += healthGained;
+    }
+
+    public void Update()
+    {
+        if ( health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+
+        GameObject[] virusObjects = GameObject.FindGameObjectsWithTag("Virus");
+        if(virusObjects.Length == 0)
+        {
+            SceneManager.LoadScene("HumanBody");
+        }
     }
 }

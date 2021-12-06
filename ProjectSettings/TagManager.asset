@@ -7,6 +7,9 @@ TagManager:
   - Virus
   - Cell
   - BCell
+  - Antibody
+  - BodyVirus
+  - ImmuneSystem
   layers:
   - Default
   - TransparentFX
