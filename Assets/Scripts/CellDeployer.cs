@@ -34,6 +34,12 @@ public class CellDeployer : MonoBehaviour
 
     void Update()
     {
+
+         // update counts
+        tCellCount = FindObjectsOfType<TCellBehavior>().Length;
+        bCellCount = FindObjectsOfType<BCellBehavior>().Length;
+        macrophageCount= FindObjectsOfType<MacrophageBehavior>().Length;
+        
         if (Input.GetButtonDown("One"))
         {
             if (macrophageCount < macrophageMax)
@@ -64,6 +70,8 @@ public class CellDeployer : MonoBehaviour
                 gameManager.LoseHealth(10);
             }
         }
+
+        
     }
 
     public int GetCountByName(string cell)

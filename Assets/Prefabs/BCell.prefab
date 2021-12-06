@@ -118,6 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   antibody: {fileID: 6246852143253133272, guid: 4155991e75be84a1981da6649ece717c, type: 3}
   antibodyBar: {fileID: 4903406998789145136, guid: b9335b3effcf747faa811e2438be3723, type: 3}
+  convertToAntibodyTime: 5
+  moveSpeed: 1
 --- !u!61 &5471352400553546791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -128,10 +130,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.030445635, y: -0.021746874}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -142,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.21}
+  m_Size: {x: 0.3721925, y: 0.34483075}
   m_EdgeRadius: 0

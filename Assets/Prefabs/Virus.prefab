@@ -117,7 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc61edc3a548147149f9920da16b1d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accelerationTime: 2
+  moveSpeed: 5
+  infectCellTime: 20
   rb: {fileID: 8209511818046274108}
+  antibodyClock: 0
+  replicationDamage: 20
 --- !u!50 &8209511818046274108
 Rigidbody2D:
   serializedVersion: 4
@@ -126,7 +131,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8209511818046274096}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

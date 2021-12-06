@@ -9,6 +9,7 @@ public class NeutralCellBehavior : MonoBehaviour
     private float virusReplicationDamage;
     private float cellInfectionTime;
 
+    private 
     void Start()
     {
         isInfected = false;

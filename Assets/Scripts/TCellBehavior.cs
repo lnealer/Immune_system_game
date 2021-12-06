@@ -12,8 +12,10 @@ public class TCellBehavior : MonoBehaviour
     private float scale;
     private bool targetAcquired = false;
     private NeutralCellBehavior[] cells;
-    private Transform infectedTarget; // cell tcell will travel to
+    private Vector2 infectedTarget; // cell tcell will travel to
     private bool destroyed;
+    private bool randomMovement;
+    //private Vector2 randomGoal;
 
     private Rigidbody2D rb;
 
@@ -36,13 +38,20 @@ public class TCellBehavior : MonoBehaviour
     void Update()
     {
         Animate();
-        if (targetAcquired)
+        CheckCells();
+        MoveToTarget();
+        // if (targetAcquired)
+        // {
+        //     MoveToTarget();
+        // }
+        // else if (!targetAcquired & !destroyed)
+        // {
+        //     CheckCells();
+        // }
+        // else
+        if (!targetAcquired)
         {
-            MoveToTarget();
-        }
-        else if (!targetAcquired & !destroyed)
-        {
-            CheckCells();
+            randomMovement = true;
         }
     }
 
@@ -61,7 +70,7 @@ public class TCellBehavior : MonoBehaviour
             if (cell.isInfected)
             {
                 targetAcquired = true;
-                infectedTarget = cell.transform;
+                infectedTarget = cell.transform.position;
             }
         }
     }
@@ -96,8 +105,17 @@ public class TCellBehavior : MonoBehaviour
         FlipCharacter();
 
         // move towards goal
-        transform.position = Vector2.MoveTowards(transform.position, infectedTarget.position, speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, infectedTarget, speed*Time.deltaTime);
         animator.SetBool("Walk", true);
+
+        if (randomMovement)
+        {
+            if (Vector2.Distance(transform.position, infectedTarget) < 1f)
+            {
+                // set new random goal
+                infectedTarget = RandomGoal();
+            }
+        }
 
     }
 
@@ -106,7 +124,7 @@ public class TCellBehavior : MonoBehaviour
         //float scaleX = transform.localScale.x;
         //bool flipped = false;
         // flip the enemy transform to look to point direction
-        if (infectedTarget.transform.position.x > transform.position.x)
+        if (infectedTarget.x > transform.position.x)
         {
             transform.localScale = new Vector3(1,1,1)*scale;
         }
@@ -115,6 +133,11 @@ public class TCellBehavior : MonoBehaviour
             transform.localScale = new Vector3(-1,1,1)*scale;   
         }
 
+    }
+
+    Vector2 RandomGoal()
+    {
+        return new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
     }
 
 }
