@@ -12,7 +12,13 @@ public class ImmuneSystemBehavior : MonoBehaviour
     public float yDirection = 0;
     private Animator animator;
     private bool facingRight = true;
+    private float scale;
+    private bool sideWalking = false;
 
+    void Start()
+    {
+        scale = transform.localScale.y;
+    }
     void Update()
     {
         ProcessInput();
@@ -35,8 +41,13 @@ public class ImmuneSystemBehavior : MonoBehaviour
     private void Run()
     {
         rb.velocity = new Vector2(xDirection * moveSpeed, yDirection * moveSpeed);
-        animator.SetBool("Walk",  (Mathf.Abs(rb.velocity.x) > moveSpeed/2 || 
-                                    Mathf.Abs(rb.velocity.y) > moveSpeed/2));
+
+        if (rb.velocity.y != 0 || rb.velocity.x != 0)
+        {
+            animator.SetBool("Side", rb.velocity.x != 0);
+            animator.SetFloat("yDirection", rb.velocity.y);
+        }
+
     }
 
     private void ProcessInput()
@@ -48,13 +59,23 @@ public class ImmuneSystemBehavior : MonoBehaviour
     
     private void FlipCharacter()
     {
+        Debug.Log("flipping");
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
+
+        if (facingRight)
+        {
+             transform.localScale = new Vector3(-1,1,1)*scale;
+        }
+        else
+        {
+            transform.localScale = new Vector3(1,1,1)*scale;
+        }
     }
 
     private void Animate()
     {
-        if (xDirection >0 && !facingRight)
+        if (xDirection > 0 && !facingRight)
         {
             FlipCharacter();
         }
@@ -62,6 +83,7 @@ public class ImmuneSystemBehavior : MonoBehaviour
         {
             FlipCharacter();
         }
+        
     }
 
     void OnCollisionEnter2D (Collision2D collision)

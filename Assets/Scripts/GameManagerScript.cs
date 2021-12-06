@@ -7,6 +7,8 @@ public class GameManagerScript : MonoBehaviour
 {
     public float health;
 
+    private float totalHealthLost;
+
     void Start()
     {
         health = GameValues.health;
@@ -20,6 +22,7 @@ public class GameManagerScript : MonoBehaviour
         }
         // reduce health
         health -= healthLost;
+        totalHealthLost += healthLost;
 
         if (health <= 0)    
         {
@@ -44,6 +47,7 @@ public class GameManagerScript : MonoBehaviour
         if ( health <= 0)
         {
             GameValues.losses++;
+            GameValues.health = health + totalHealthLost;
             SceneManager.LoadScene("GameOver");
         }
 
@@ -51,7 +55,7 @@ public class GameManagerScript : MonoBehaviour
         GameObject[] virusObjects = GameObject.FindGameObjectsWithTag("Virus");
         if(virusObjects.Length == 0 && scene.name != "HumanBody" && scene.name != "NLevelVaccine")
         {
-            GameValues.health = health;
+            GameValues.health +=totalHealthLost + GameValues.healthGainPerLevel;
             if (scene.name == "NLevel")
             {
                 SceneManager.LoadScene("NLevelVaccine");

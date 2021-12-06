@@ -222,6 +222,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7225361184154589653, guid: 3256dd1e480b64955a316a13362bc542, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471428797758144589, guid: 3256dd1e480b64955a316a13362bc542, type: 3}
+      propertyPath: m_Text
+      value: Influenza (Mutated)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3256dd1e480b64955a316a13362bc542, type: 3}
 --- !u!224 &60589514 stripped
@@ -254,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.74
+      value: 4.04
       objectReference: {fileID: 0}
     - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -454,7 +462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.445461
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
       propertyPath: m_LocalPosition.y
