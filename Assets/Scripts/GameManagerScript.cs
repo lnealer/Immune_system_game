@@ -9,7 +9,7 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
-        health = 100;
+        health = GameValues.health;
     }
 
     public void LoseHealth(float healthLost)
@@ -43,13 +43,23 @@ public class GameManagerScript : MonoBehaviour
     {
         if ( health <= 0)
         {
+            GameValues.losses++;
             SceneManager.LoadScene("GameOver");
         }
 
+        Scene scene = SceneManager.GetActiveScene();
         GameObject[] virusObjects = GameObject.FindGameObjectsWithTag("Virus");
-        if(virusObjects.Length == 0)
+        if(virusObjects.Length == 0 && scene.name != "HumanBody" && scene.name != "NLevelVaccine")
         {
-            SceneManager.LoadScene("HumanBody");
+            GameValues.health = health;
+            if (scene.name == "NLevel")
+            {
+                SceneManager.LoadScene("NLevelVaccine");
+            }
+            else
+            {
+                SceneManager.LoadScene("HumanBody");
+            }
         }
     }
 }

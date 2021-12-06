@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VirusBehavior : MonoBehaviour
 {
@@ -16,6 +17,19 @@ public class VirusBehavior : MonoBehaviour
 
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "NPlus1Level" && GameValues.levelNVaccine != 0)
+        {
+            maxSpeed = maxSpeed * (1 - (1/GameValues.levelNVaccine));
+            accelerationTime = accelerationTime * (1 - (1/GameValues.levelNVaccine));
+        }
+
+        if (GameValues.losses > 5)
+        {
+            maxSpeed = maxSpeed * .7f;
+            accelerationTime = accelerationTime * .7f;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         antibodyCollision = false;
     }

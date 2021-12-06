@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NPlus1Level.unity
     guid: 0781be87cc04c4a508309174ddc44acd
+  - enabled: 1
+    path: Assets/Scenes/NLevelVaccine.unity
+    guid: 62c594f9f0aad4b84bbf90803b9689ee
   m_configObjects: {}
