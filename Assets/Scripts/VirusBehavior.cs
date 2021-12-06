@@ -99,7 +99,7 @@ public class VirusBehavior : MonoBehaviour
 
     Vector2 RandomGoal()
     {
-        return new Vector2(Random.Range(-9, 9), Random.Range(-4, 4));
+        return new Vector2(Random.Range(-5, 5), Random.Range(-4, 4));
     }
 
     void OnCollisionEnter2D (Collision2D collision)
@@ -122,7 +122,10 @@ public class VirusBehavior : MonoBehaviour
         if(collision.gameObject.tag == "Antibody")
         {
             antibodyCollision = true;
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
+
     }
 
     void OnCollisionExit2D (Collision2D collision)
@@ -133,14 +136,14 @@ public class VirusBehavior : MonoBehaviour
         }
     } 
 
-    void OnCollisionStay2D (Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Antibody" && antibodyClock < 0)
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-    }
+    // void OnCollisionStay2D (Collision2D collision)
+    // {
+    //     if(collision.gameObject.tag == "Antibody" && antibodyClock <= 0)
+    //     {
+    //         Destroy(collision.gameObject);
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     private IEnumerator DelayRestartVirus(string cellName)
     {

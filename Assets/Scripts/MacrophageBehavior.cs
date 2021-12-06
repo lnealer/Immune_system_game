@@ -77,7 +77,7 @@ public class MacrophageBehavior : ImmuneBehavior
 
     }
 
-    void OnTriggerEnter2D (Collider2D collider)
+    void OnTriggerStay2D (Collider2D collider)
     {
         if(collider.gameObject.tag == "Virus")
         {
@@ -104,7 +104,7 @@ public class MacrophageBehavior : ImmuneBehavior
 
     Vector2 RandomGoal()
     {
-        return new Vector2(Random.Range(-7, 7), Random.Range(-3, 3));
+        return new Vector2(Random.Range(-5, 5), Random.Range(-3, 3));
     }
 
     void FlipCharacter()
