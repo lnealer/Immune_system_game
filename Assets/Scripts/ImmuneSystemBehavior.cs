@@ -11,7 +11,7 @@ public class ImmuneSystemBehavior : MonoBehaviour
     public float xDirection = 0;
     public float yDirection = 0;
     private Animator animator;
-    private bool facingRight = true;
+    private bool facingRight = false;
     private float scale;
     private bool sideWalking = false;
 
