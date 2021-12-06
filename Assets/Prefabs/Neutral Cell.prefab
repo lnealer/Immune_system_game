@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2193428548579794687}
   m_Layer: 0
   m_Name: Neutral Cell
-  m_TagString: Cell
+  m_TagString: NeutralCell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,3 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInfected: 0
+  virus: {fileID: 8209511818046274096, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}

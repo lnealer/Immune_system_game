@@ -69,7 +69,7 @@ public class TCellBehavior : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         // when the tcell collides with an infected cell, both are destroyed
-        if (collider.gameObject.tag == "Cell"|| collider.gameObject.name == "Neutral Cell")
+        if (collider.gameObject.tag == "Cell"|| collider.gameObject.tag == "NeutralCell")
         {
             if (collider.gameObject.GetComponent<NeutralCellBehavior>().isInfected) 
             {

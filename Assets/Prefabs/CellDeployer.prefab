@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5668585230355666580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6516795519767188465}
+  - component: {fileID: 5020582761906977453}
+  m_Layer: 0
+  m_Name: CellDeployer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6516795519767188465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668585230355666580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5020582761906977453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668585230355666580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf05c0b38709ba4abaa3a442d791fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  macrophageKey: One
+  bCellKey: Two
+  tCellKey: Three
+  healthLoss: 10
+  tCellCount: 0
+  macrophageCount: 0
+  bCellCount: 0
+  tCellMax: 3
+  macrophageMax: 3
+  bCellMax: 3
+  macroPrefab: {fileID: 7365759063726183690, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
+  tCellPrefab: {fileID: 2589149876608404173, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
+  bCellPrefab: {fileID: 4490954327364807711, guid: 33bb803f3cccfa2408548026071940d3, type: 3}

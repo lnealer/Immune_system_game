@@ -69,7 +69,17 @@ public class ImmuneSystemBehavior : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if(collision.gameObject.tag == "BodyVirus")
         {
-            SceneManager.LoadScene("Test");
+            SceneManager.LoadScene("Tutorial");
+        }
+
+        if(collision.gameObject.tag == "NVirus")
+        {
+            SceneManager.LoadScene("NLevel");
+        }
+
+        if(collision.gameObject.tag == "NPlus1Virus")
+        {
+            SceneManager.LoadScene("NPlus1Level");
         }
     }
 }

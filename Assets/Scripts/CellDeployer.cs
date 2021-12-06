@@ -50,7 +50,7 @@ public class CellDeployer : MonoBehaviour
             {
                 Debug.Log("Bcell deployed");
                 bCellCount++;
-                Instantiate(bCellPrefab, initPosition, Quaternion.identity);
+                Instantiate(bCellPrefab, new Vector2(Random.Range(-4, 4), Random.Range(-4, 4)), Quaternion.identity);
                 gameManager.LoseHealth(10);
             }
         }

@@ -14,6 +14,7 @@ public class AntibodyBarBehavior : MonoBehaviour
     void Start()
     {
         antibodyBar = GetComponent<Image>();
+        transform.position = transform.parent.parent.position;
     }
     
     void OnEnable()

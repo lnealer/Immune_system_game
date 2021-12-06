@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class BCellBehavior : MonoBehaviour
 {
-    
-    public GameObject antibodyBar;
     public GameObject antibody;
+    private GameObject antibodyBar;
 
     void Start()
     {
-        antibodyBar = GameObject.Find("AntibodyBar");
-        antibodyBar.SetActive(false);
+        antibodyBar = transform.GetChild(0).GetChild(0).gameObject;
+        Debug.Log(antibodyBar);
     }
 
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if(collision.gameObject.name == "Macrophage" && collision.gameObject.GetComponent<MacrophageBehavior>().readAntigen)
+        if(collision.gameObject.tag == "Macrophage" && collision.gameObject.GetComponent<MacrophageBehavior>().readAntigen)
         {
             antibodyBar.SetActive(true);
             StartCoroutine(DelayDestroyBCell());

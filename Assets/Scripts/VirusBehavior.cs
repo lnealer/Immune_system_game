@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class VirusBehavior : MonoBehaviour
 {
-    private float accelerationTime = 2f;
-    private float maxSpeed = 3f;
+    public float accelerationTime = 2f;
+    public float maxSpeed = 3f;
+    public float infectCellTime = 20f;
     private float timeLeft;
     public Rigidbody2D rb;
     private Vector2 movement;
@@ -40,7 +41,7 @@ public class VirusBehavior : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if(collision.gameObject.name == "Neutral Cell")
+        if(collision.gameObject.tag == "NeutralCell")
         {
             if(!(collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected))
             {
@@ -76,7 +77,7 @@ public class VirusBehavior : MonoBehaviour
 
     private IEnumerator DelayRestartVirus()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(infectCellTime);
         rb.constraints = RigidbodyConstraints2D.None;
     }
 }
