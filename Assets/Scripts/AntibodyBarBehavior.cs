@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class AntibodyBarBehavior : MonoBehaviour
 {
-    Image antibodyBar;
-    public float maxTime;
-    float startTime;
-    float timeLeft;
-    //public GameObject antibody;
+    private float maxTime;
+    private float startTime;
+    private float timeLeft;
+    private float maxLength = 0.3f;
+    
+    public Vector3 scale;
 
     void Start()
     {
-        antibodyBar = GetComponent<Image>();
-        transform.position = transform.parent.parent.position;
+        scale = transform.localScale;
+        //transform.position = transform.parent.position;
     }
     
     void OnEnable()
@@ -29,10 +30,10 @@ public class AntibodyBarBehavior : MonoBehaviour
     {
         if ((timeLeft - startTime) > 0) {
             timeLeft -= Time.deltaTime;
-            antibodyBar.fillAmount = (timeLeft - startTime) / maxTime;
+            scale.x = (((timeLeft - startTime) / maxTime) * maxLength);
+            transform.localScale = scale;
         }
         else {
-            //antibody.SetActive(true);
             Destroy(gameObject);
         }
     }

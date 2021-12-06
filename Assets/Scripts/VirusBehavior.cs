@@ -57,12 +57,14 @@ public class VirusBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag == "NeutralCell")
         {
+            string cellName = collision.gameObject.name;
             if(!(collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected))
             {
                 Debug.Log("Virus hit healthy cell");
                 collision.gameObject.GetComponent<NeutralCellBehavior>().isInfected = true;
                 rb.constraints = RigidbodyConstraints2D.FreezePosition;
-                StartCoroutine(DelayRestartVirus());
+                StartCoroutine(DelayRestartVirus(cellName));
+
             }
         }
 
@@ -89,9 +91,13 @@ public class VirusBehavior : MonoBehaviour
         }
     }
 
-    private IEnumerator DelayRestartVirus()
+    private IEnumerator DelayRestartVirus(string cellName)
     {
-        yield return new WaitForSeconds(infectCellTime);
+        while ((infectCellTime > 0) && (GameObject.Find(cellName) != null))
+        {
+            yield return new WaitForSeconds(.1f);
+            infectCellTime -= .1f;
+        }
         rb.constraints = RigidbodyConstraints2D.None;
     }
 }

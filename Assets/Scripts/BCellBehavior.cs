@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class BCellBehavior : MonoBehaviour
 {
     public GameObject antibody;
-    private GameObject antibodyBar;
+    public GameObject antibodyBar;
 
     private float convertToAntibodyTime = 5f;
 
     void Start()
     {
-        antibodyBar = transform.GetChild(0).GetChild(0).gameObject;
-        Debug.Log(antibodyBar);
+        //antibodyBar = transform.GetChild(0).gameObject;
+        //Debug.Log(antibodyBar);
 
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "NPlus1Level" && GameValues.levelNVaccine != 0)
@@ -26,7 +26,7 @@ public class BCellBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag == "Macrophage" && collision.gameObject.GetComponent<MacrophageBehavior>().readAntigen)
         {
-            antibodyBar.SetActive(true);
+            Instantiate(antibodyBar, transform);
             StartCoroutine(DelayDestroyBCell());
         }
     }

@@ -55,4 +55,4 @@ MonoBehaviour:
   bCellMax: 3
   macroPrefab: {fileID: 7365759063726183690, guid: 5776dbb48927c9043bf7cc7d76045823, type: 3}
   tCellPrefab: {fileID: 2589149876608404173, guid: 4417c6be4fadce74189d00d11f93b820, type: 3}
-  bCellPrefab: {fileID: 4490954327364807711, guid: 33bb803f3cccfa2408548026071940d3, type: 3}
+  bCellPrefab: {fileID: 4490954327364807711, guid: 189476d19598240bab6ee99019943144, type: 3}
