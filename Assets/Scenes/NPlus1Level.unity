@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: infectCellTime
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: accelerationTime
@@ -845,11 +845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: m_LocalPosition.x

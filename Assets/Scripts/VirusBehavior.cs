@@ -126,6 +126,11 @@ public class VirusBehavior : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (collision.gameObject.tag == "Virus")
+        {
+            goal = RandomGoal();
+        }
+
     }
 
     void OnCollisionExit2D (Collision2D collision)

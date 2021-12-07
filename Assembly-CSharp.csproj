@@ -48,6 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameOver.cs" />
+     <Compile Include="Assets\Scripts\TutorialScript.cs" />
      <Compile Include="Assets\ImportedArt\CuteSlime(Macrophage)\Mobs.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\CountScript.cs" />

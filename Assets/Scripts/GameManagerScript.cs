@@ -55,15 +55,17 @@ public class GameManagerScript : MonoBehaviour
         GameObject[] virusObjects = GameObject.FindGameObjectsWithTag("Virus");
         if(virusObjects.Length == 0 && scene.name != "HumanBody" && scene.name != "NLevelVaccine")
         {
-            GameValues.health +=totalHealthLost + GameValues.healthGainPerLevel;
+            GameValues.health +=  GameValues.healthGainPerLevel;
+            //totalHealthLost + GameValues.healthGainPerLevel;
+            SceneManager.LoadScene("Win");
             if (scene.name == "NLevel")
             {
                 SceneManager.LoadScene("NLevelVaccine");
             }
-            else
-            {
-                SceneManager.LoadScene("HumanBody");
-            }
+            // else
+            // {
+            //     SceneManager.LoadScene("HumanBody");
+            // }
         }
     }
 }
