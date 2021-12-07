@@ -237,6 +237,95 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5312826786794063349, guid: 3256dd1e480b64955a316a13362bc542, type: 3}
   m_PrefabInstance: {fileID: 60589513}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &263612225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8209511818046274096, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_Name
+      value: Virus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: antibodyClock
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: infectCellTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: accelerationTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: replicationDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3467791
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274109, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
 --- !u!1001 &415399973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,6 +660,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+--- !u!1001 &1586133589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2193428548579794682, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_Name
+      value: Neutral Cell (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6061499
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2193428548579794685, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5668a8ab9b783954c96f8ed7ff90136e, type: 3}
 --- !u!1 &1610204506
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,6 +984,14 @@ PrefabInstance:
     - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: maxSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
+      propertyPath: antibodyClock
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8209511818046274107, guid: 1ca3a002680ad2e4790b912ac3f3acd5, type: 3}
       propertyPath: infectCellTime
